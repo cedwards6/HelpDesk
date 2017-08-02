@@ -7,7 +7,7 @@ var hD = angular.module('helpDesk', ['ui.router',
 'infinite-scroll'
 ]);
 
-    hD.values('globals', {
+    hD.value('globals', {
         url: 'http://staging2.smithdrug.com'
     })
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
@@ -22,7 +22,7 @@ var hD = angular.module('helpDesk', ['ui.router',
                 controller: 'orderStatsCtrl'
             })
             .state('itSupport', {
-                url:'/',
+                url:'/itSupport',
                 params: {
                     obj: null
                 },
@@ -30,7 +30,7 @@ var hD = angular.module('helpDesk', ['ui.router',
                 controller: 'itSupportCtrl'
             })
             .state('customerAdmin', {
-                url:'/',
+                url:'/customerAdmin',
                 params: {
                     obj: null
                 },
@@ -38,7 +38,7 @@ var hD = angular.module('helpDesk', ['ui.router',
                 controller: 'custAdminCtrl'
             })
             .state('onr', {
-                url:'/',
+                url:'/onr',
                 params: {
                     obj: null
                 },
@@ -46,7 +46,7 @@ var hD = angular.module('helpDesk', ['ui.router',
                 controller: 'onrCtrl'
             })
             .state('express222Setup', {
-                url:'/',
+                url:'/express222Setup',
                 params: {
                     obj: null
                 },
