@@ -1,0 +1,116 @@
+.ds-responsive {
+    font-size: 12px;
+}
+
+/* RESPONSIVE TABLE MEDIA QUERIES */
+@media screen and (max-width: 1200px) {
+    .ds-responsive.ds-table-large tr th,
+    .ds-responsive.ds-table-large tr td{
+        font-size: .9em;
+    }
+    .ds-responsive.ds-table-large tr td {
+        word-wrap: break-word;
+    }
+
+    .ds-modal-table tr th,
+    .ds-modal-table tr td{
+        font-size: .8em;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .ds-responsive.ds-table-large tr th,
+    .ds-responsive.ds-table-large tr td{
+        font-size: .8em;
+    }
+    .ds-responsive.ds-table-large tr td {
+        word-wrap: break-word;
+    }
+
+    .ds-modal-table tr th,
+    .ds-modal-table tr td{
+        font-size: .7em;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .ds-responsive tr th.ds-remove,
+    .ds-responsive tr td.ds-remove {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .ds-modal-table tr th,
+    .ds-modal-table tr td {
+        padding: 3px !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .ds-responsive {
+        font-size: 14px !important;
+    }
+    .ds-responsive tr th,
+    .ds-responsive tr td{
+        font-size: 1em;
+    }
+    .ds-responsive tr:hover td {
+        background-color: #ddd;
+        color: #000;
+        cursor: pointer;
+        cursor: hand;
+    }
+
+    table.ds-responsive,
+    .ds-responsive thead,
+    .ds-responsive tbody,
+    .ds-responsive thead th,
+    .ds-responsive thead tr,
+    .ds-responsive tbody tr,
+    .ds-responsive thead tr td,
+    .ds-responsive tbody tr td {
+        display: block;
+    }
+
+    .ds-responsive tr:first-child {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .ds-responsive tr {border: 1px solid #ccc;}
+
+    .ds-responsive tr td {
+        /*border: none !important;*/
+        /*border-bottom: 1px solid #eee;*/
+        position: relative;
+        padding-left: 50%!important;
+        white-space: normal;
+        text-align: left;
+        display: block;
+        box-sizing: content-box;
+        min-height: 1em;
+    }
+
+    .ds-responsive tr td::before {
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        word-wrap: break-word;
+        text-align: left;
+        font-weight: 700;
+        content: attr(title) !important;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .ds-responsive tr td {
+        padding-left: 30%!important;
+        font-size: .8em !important;
+    }
+    .ds-modal-table tr td {
+        font-size: .7em !important;
+    }
+}
