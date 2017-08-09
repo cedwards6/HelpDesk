@@ -1,6 +1,7 @@
-angular.module('helpDesk').controller('itSupportCtrl', function ($state, $rootScope, $scope, $uibModal, $localStorage, $sessionStorage, $q) {
+angular.module('helpDesk').controller('itSupportCtrl', function ($state, $rootScope, $scope, $uibModal, CustomerService, $localStorage, $sessionStorage, $q) {
 
     var customerId;
+    $scope.customerInfo = [];
 
     // FUNCTIONS //
     //////////////
@@ -13,10 +14,16 @@ angular.module('helpDesk').controller('itSupportCtrl', function ($state, $rootSc
     //////////////////////
 
     $scope.search = function() {
-        console.log('in search', $scope.searchAcct);
+        //console.log('in search', $scope.searchAcct);
         customerId = $scope.searchAcct;
         // make webservice calls here
-
+        CustomerService.getAllCustomerInfo(customerId).then(function(response){
+           //console.log("response ", response);
+           if (angular.isDefined(response.data)){
+                console.log("in isdefined");
+                $scope.customerInfo = response.data.RowSet;
+           }
+        });
     }
 
 
