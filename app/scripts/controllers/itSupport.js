@@ -20,8 +20,8 @@ angular.module('helpDesk').controller('itSupportCtrl', function ($state, $rootSc
         CustomerService.getAllCustomerInfo(customerId).then(function(response){
            //console.log("response ", response);
            if (angular.isDefined(response.data)){
-                console.log("in isdefined");
-                $scope.customerInfo = response.data.RowSet;
+                //console.log("in isdefined");
+                $scope.customerInfo = [response];
            }
         });
     }
