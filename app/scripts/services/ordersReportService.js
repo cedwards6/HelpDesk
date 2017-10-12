@@ -70,20 +70,46 @@ angular.module('helpDesk').factory('ordersReportService', function ($q, $localSt
         return $http.get('http://10.225.150.28:10039' + '/SDCWebServices/webengine/com/smithdrug/services/ordersReport/Action!getSelectedMonthExecute?Date=' & date);
     };
 
-    var_getTodaysPortalVAIOrders = function() {
+    var _getTodaysPortalVAIOrders = function() {
         //return $http.get(globals.url + '/SDCWebServices/webengine/com/smithdrug/services/ordersReport/Action!getTodaysDateExecute');
         return $http.get('http://10.225.150.28:10039' + '/SDCWebServices/webengine/com/smithdrug/services/ordersReport/Action!getTodaysPortalVAIOrdersExecute');
     };
 
-    var_getCurrentMonthName = function() {
+    var _getCurrentMonthName = function() {
         //return $http.get(globals.url + '/SDCWebServices/webengine/com/smithdrug/services/ordersReport/Action!getTodaysDateExecute');
         return $http.get('http://10.225.150.28:10039' + '/SDCWebServices/webengine/com/smithdrug/services/ordersReport/Action!getCurrentMonthNameExecute');
     };
 
-    var_getPreviousMonthName = function() {
+    var _getPreviousMonthName = function() {
         //return $http.get(globals.url + '/SDCWebServices/webengine/com/smithdrug/services/ordersReport/Action!getTodaysDateExecute');
         return $http.get('http://10.225.150.28:10039' + '/SDCWebServices/webengine/com/smithdrug/services/ordersReport/Action!getPreviousMonthNameExecute');
     };
+
+    var _getPrevious2MonthName = function() {
+        //return $http.get(globals.url + '/SDCWebServices/webengine/com/smithdrug/services/ordersReport/Action!getTodaysDateExecute');
+        return $http.get('http://10.225.150.28:10039' + '/SDCWebServices/webengine/com/smithdrug/services/ordersReport/Action!getPrevious2MonthNameExecute');
+    };
+
+    var _getPrevious3MonthName = function() {
+        //return $http.get(globals.url + '/SDCWebServices/webengine/com/smithdrug/services/ordersReport/Action!getTodaysDateExecute');
+        return $http.get('http://10.225.150.28:10039' + '/SDCWebServices/webengine/com/smithdrug/services/ordersReport/Action!getPrevious3MonthNameExecute');
+    };
+
+    var _getPrevious4MonthName = function() {
+        //return $http.get(globals.url + '/SDCWebServices/webengine/com/smithdrug/services/ordersReport/Action!getTodaysDateExecute');
+        return $http.get('http://10.225.150.28:10039' + '/SDCWebServices/webengine/com/smithdrug/services/ordersReport/Action!getPrevious4MonthNameExecute');
+    };
+
+    var _getPrevious5MonthName = function() {
+        //return $http.get(globals.url + '/SDCWebServices/webengine/com/smithdrug/services/ordersReport/Action!getTodaysDateExecute');
+        return $http.get('http://10.225.150.28:10039' + '/SDCWebServices/webengine/com/smithdrug/services/ordersReport/Action!getPrevious5MonthNameExecute');
+    };
+
+    var _getPrevious6MonthName = function() {
+        //return $http.get(globals.url + '/SDCWebServices/webengine/com/smithdrug/services/ordersReport/Action!getTodaysDateExecute');
+        return $http.get('http://10.225.150.28:10039' + '/SDCWebServices/webengine/com/smithdrug/services/ordersReport/Action!getPrevious6MonthNameExecute');
+    };
+
 
     ordersReportService.getCustInfo  = _getCustInfo;
     ordersReportService.getTodaysDate = _getTodaysDate;
@@ -99,6 +125,14 @@ angular.module('helpDesk').factory('ordersReportService', function ($q, $localSt
     ordersReportService.getMonth = _getMonth;
     ordersReportService.getOrderReport = _getOrderReport;
     ordersReportService.getSelectedMonth = _getSelectedMonth;
+    ordersReportService.getTodaysPortalVAIOrders = _getTodaysPortalVAIOrders;
+    ordersReportService.getCurrentMonthName = _getCurrentMonthName;
+    ordersReportService.getPreviousMonthName = _getPreviousMonthName;
+    ordersReportService.getPrevious2MonthName = _getPrevious2MonthName;
+    ordersReportService.getPrevious3MonthName = _getPrevious3MonthName;
+    ordersReportService.getPrevious4MonthName = _getPrevious4MonthName;
+    ordersReportService.getPrevious5MonthName = _getPrevious5MonthName;
+    ordersReportService.getPrevious6MonthName = _getPrevious6MonthName;
 
     return ordersReportService;
 

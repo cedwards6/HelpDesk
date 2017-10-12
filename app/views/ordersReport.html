@@ -1,9 +1,9 @@
 
-<h2>Customer Ordering Systems Report</h2>
+<h2 class="report-heading">Customer Ordering Systems Report</h2>
 
 <h4>Today's Orders</h4>
-<h4>Portal - {{}}</h4>
-<h4>VAI - {{}}</h4>
+<h4>Portal - {{currentPortal | number : 0}}</h4>
+<h4>VAI - {{currentVAI | number : 0}}</h4>
 <br>
 <div class="container-fluid">
     <div class="row">
@@ -31,15 +31,15 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>YESTERDAY</td>
-                        <td>{{lastDayAxway}}</td>
-                        <td>{{lastDayLegisym}}</td>
-                        <td>{{lastDayDS}}</td>
-                        <td>{{lastDayPortal}}</td>
-                        <td>{{lastDayEDI}}</td>
-                        <td>{{lastDayOD}}</td>
-                        <td>{{lastDayIRx}}</td>
-                        <td>{{lastDayTotal}}</td>
+                        <td>Yesterday</td>
+                        <td>{{lastDayAxway | number : 0}}</td>
+                        <td>{{lastDayLegisym | number : 0}}</td>
+                        <td>{{lastDayDS | number : 0}}</td>
+                        <td>{{lastDayPortal | number : 0}}</td>
+                        <td>{{lastDayEDI | number : 0}}</td>
+                        <td>{{lastDayOD | number : 0}}</td>
+                        <td>{{lastDayIRx | number : 0}}</td>
+                        <td>{{lastDayTotal | number : 0}}</td>
                         <td>{{lastDayAxwayPct | number : 2}}</td>
                         <td>{{lastDayLegisymPct | number : 2}}</td>
                         <td>{{lastDayDSPct | number : 2}}</td>
@@ -49,15 +49,15 @@
                         <td>{{lastDayIRxPct | number : 2}}</td>
                     </tr>
                     <tr>
-                        <td>YESTERDAY</td>
-                        <td>{{mtdAxway}}</td>
-                        <td>{{mtdLegisym}}</td>
-                        <td>{{mtdDS}}</td>
-                        <td>{{mtdPortal}}</td>
-                        <td>{{mtdEDI}}</td>
-                        <td>{{mtdOD}}</td>
-                        <td>{{mtdIRx}}</td>
-                        <td>{{mtdTotal}}</td>
+                        <td>{{currentMonth}}</td>
+                        <td>{{mtdAxway | number : 0}}</td>
+                        <td>{{mtdLegisym | number : 0}}</td>
+                        <td>{{mtdDS | number : 0}}</td>
+                        <td>{{mtdPortal | number : 0}}</td>
+                        <td>{{mtdEDI | number : 0}}</td>
+                        <td>{{mtdOD | number : 0}}</td>
+                        <td>{{mtdIRx | number : 0}}</td>
+                        <td>{{mtdTotal | number : 0}}</td>
                         <td>{{mtdAxwayPct | number : 2}}</td>
                         <td>{{mtdLegisymPct | number : 2}}</td>
                         <td>{{mtdDSPct | number : 2}}</td>
@@ -66,7 +66,78 @@
                         <td>{{mtdODPct | number : 2}}</td>
                         <td>{{mtdIRxPct | number : 2}}</td>
                     </tr>
-
+                    <tr>
+                        <td>{{prvMonth}}</td>
+                        <td>{{prvAxway | number : 0}}</td>
+                        <td>{{prvLegisym | number : 0}}</td>
+                        <td>{{prvDS | number : 0}}</td>
+                        <td>{{prvPortal | number : 0}}</td>
+                        <td>{{prvEDI | number : 0}}</td>
+                        <td>{{prvOD | number : 0}}</td>
+                        <td>{{prvIRx | number : 0}}</td>
+                        <td>{{prvTotal | number : 0}}</td>
+                        <td>{{prvAxwayPct | number : 2}}</td>
+                        <td>{{prvLegisymPct | number : 2}}</td>
+                        <td>{{prvDSPct | number : 2}}</td>
+                        <td>{{prvPortalPct | number : 2}}</td>
+                        <td>{{prvEDIPct | number : 2}}</td>
+                        <td>{{prvODPct | number : 2}}</td>
+                        <td>{{prvIRxPct | number : 2}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{prv2Month}}</td>
+                        <td>{{prv2Axway | number : 0}}</td>
+                        <td>{{prv2Legisym | number : 0}}</td>
+                        <td>{{prv2DS | number : 0}}</td>
+                        <td>{{prv2Portal | number : 0}}</td>
+                        <td>{{prv2EDI | number : 0}}</td>
+                        <td>{{prv2OD | number : 0}}</td>
+                        <td>{{prv2IRx | number : 0}}</td>
+                        <td>{{prv2Total | number : 0}}</td>
+                        <td>{{prv2AxwayPct | number : 2}}</td>
+                        <td>{{prv2LegisymPct | number : 2}}</td>
+                        <td>{{prv2DSPct | number : 2}}</td>
+                        <td>{{prv2PortalPct | number : 2}}</td>
+                        <td>{{prv2EDIPct | number : 2}}</td>
+                        <td>{{prv2ODPct | number : 2}}</td>
+                        <td>{{prv2IRxPct | number : 2}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{prv3Month}}</td>
+                        <td>{{prv3Axway | number : 0}}</td>
+                        <td>{{prv3Legisym | number : 0}}</td>
+                        <td>{{prv3DS | number : 0}}</td>
+                        <td>{{prv3Portal | number : 0}}</td>
+                        <td>{{prv3EDI | number : 0}}</td>
+                        <td>{{prv3OD | number : 0}}</td>
+                        <td>{{prv3IRx | number : 0}}</td>
+                        <td>{{prv3Total | number : 0}}</td>
+                        <td>{{prv3AxwayPct | number : 2}}</td>
+                        <td>{{prv3LegisymPct | number : 2}}</td>
+                        <td>{{prv3DSPct | number : 2}}</td>
+                        <td>{{prv3PortalPct | number : 2}}</td>
+                        <td>{{prv3EDIPct | number : 2}}</td>
+                        <td>{{prv3ODPct | number : 2}}</td>
+                        <td>{{prv3IRxPct | number : 2}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{prv4Month}}</td>
+                        <td>{{prv4Axway | number : 0}}</td>
+                        <td>{{prv4Legisym | number : 0}}</td>
+                        <td>{{prv4DS | number : 0}}</td>
+                        <td>{{prv4Portal | number : 0}}</td>
+                        <td>{{prv4EDI | number : 0}}</td>
+                        <td>{{prv4OD | number : 0}}</td>
+                        <td>{{prv4IRx | number : 0}}</td>
+                        <td>{{prv4Total | number : 0}}</td>
+                        <td>{{prv4AxwayPct | number : 2}}</td>
+                        <td>{{prv4LegisymPct | number : 2}}</td>
+                        <td>{{prv4DSPct | number : 2}}</td>
+                        <td>{{prv4PortalPct | number : 2}}</td>
+                        <td>{{prv4EDIPct | number : 2}}</td>
+                        <td>{{prv4ODPct | number : 2}}</td>
+                        <td>{{prv4IRxPct | number : 2}}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
