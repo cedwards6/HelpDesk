@@ -6,8 +6,8 @@ angular.module('helpDesk').controller('MainCtrl', function ($state, $rootScope, 
 	$scope.$localStorage = $localStorage;
 	$scope.navbar = [
 		{
-			name: 'Order Stats',
-			route: 'orderStats'
+			name: 'Orders Report',
+			route: 'ordersReport'
 		},
 		{
 			name: 'Customer Info',

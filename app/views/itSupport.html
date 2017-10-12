@@ -1,0 +1,193 @@
+<!--<style>
+    .container-full {
+        margin: 0 auto;
+        width: 100%;
+    }
+</style> -->
+<div><label>Enter Customer Number: </label> <input type="text" ng-model="searchAcct"> <button type="button" class="btn btn-primary" ng-click="search()">
+    Search
+</button>
+</div>
+<h2>Customer Information</h2>
+<hr/>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2"><strong>Account Number:</strong></div>
+        <div class="col-md-2">{{customerInfo.CUSTOMERNO}}</div>
+        <div class="col-md-2"><strong>Account Status:</strong></div>
+        <div class="col-md-2"><span ng-style="{'color: red': customerInfo.ACTIVE==A}">{{customerInfo.ACTIVE}}</span></div>
+        <div class="col-md-2"><strong>Date Inactive:</strong></div>
+        <div class="col-md-2">{{customerInfo.DATEINACTIVE}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"><strong>Account Name:</strong></div>
+        <div class="col-md-10">{{customerInfo.BILLTONAME}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"><strong>Address:</strong></div>
+        <div class="col-md-2">{{customerInfo.BILLTOADDR1}}</div>
+        <div class="col-md-2"><strong>City:</strong></div>
+        <div class="col-md-2">{{customerInfo.BILLTOCITY}}</div>
+        <div class="col-md-2"><strong>State:</strong></div>
+        <div class="col-md-2">{{customerInfo.BILLTOST}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"><strong>Zip:</strong></div>
+        <div class="col-md-2">{{customerInfo.BILLTOZIP}}</div>
+        <div class="col-md-2"><strong>Email:</strong></div>
+        <div class="col-md-2">{{customerInfo.EMAIL}}</div>
+        <div class="col-md-2"><strong>Phone:</strong></div>
+        <div class="col-md-2">{{customerInfo.PHONE}}</div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-md-2"><strong>DEA Number:</strong></div>
+        <div class="col-md-2">{{customerInfo.DEANO}}</div>
+        <div class="col-md-2"><strong>DEA Expiration:</strong></div>
+        <div class="col-md-2">{{customerInfo.DEAEXPDATE}}</div>
+        <div class="col-md-2"><strong>340 B Customer:</strong></div>
+        <div class="col-md-2">{{customerInfo.ACCT340B}}</div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-md-2"><strong>SalesPerson:</strong></div>
+        <div class="col-md-2">{{customerInfo.SALESMANNAME}}</div>
+        <div class="col-md-2"><strong>Parent Customer:</strong></div>
+        <div class="col-md-2">{{customerInfo.PARENTCUST}}</div>
+        <div class="col-md-2"><strong>Inst Track Code:</strong></div>
+        <div class="col-md-2">{{customerInfo.INSTCODE}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"><strong>Route:</strong></div>
+        <div class="col-md-2">{{customerInfo.ROUTE}}</div>
+        <div class="col-md-2"><strong>Saturday Route:</strong></div>
+        <div class="col-md-2">{{customerInfo.SATROUTE}}</div>
+        <div class="col-md-2"><strong>Day Orders:</strong></div>
+        <div class="col-md-2">{{customerInfo.DAYORDERS}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"><strong>Avg RX Day:</strong></div>
+        <div class="col-md-2">{{customerInfo.AVGRXPERDAY}}</div>
+        <div class="col-md-2"><strong>Yearly Sales:</strong></div>
+        <div class="col-md-2">{{customerInfo.YEARLYSALES}}</div>
+        <div class="col-md-2"><strong>Last Invoice Date:</strong></div>
+        <div class="col-md-2">{{customerInfo.LASTINVOICEDATE}}</div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-md-2"><strong>EDI Customer:</strong></div>
+        <div class="col-md-2">{{customerInfo.EDICUST}}</div>
+        <div class="col-md-2"><strong>855's:</strong></div>
+        <div class="col-md-2">{{customerInfo.FORM855}}</div>
+        <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-md-2"><strong>Back Orders:</strong></div>
+        <div class="col-md-2">{{customerInfo.ALLOWBACKORDERS}}</div>
+        <div class="col-md-2"><strong>Item Subs:</strong></div>
+        <div class="col-md-2">{{customerInfo.ITEMSUB}}</div>
+        <div class="col-md-2"><strong>SubRule ID:</strong></div>
+        <div class="col-md-2">{{customerInfo.SUBRULEID}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"><strong>Best Price:</strong></div>
+        <div class="col-md-2">{{customerInfo.BESTPRICE}}</div>
+        <div class="col-md-2"><strong>Best Price Tolerance:</strong></div>
+        <div class="col-md-2">{{customerInfo.BESTPRICETOL}}</div>
+        <div class="col-md-2"><strong>Auto Ship:</strong></div>
+        <div class="col-md-2">{{customerInfo.AUTOSHIP}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"><strong>POS System:</strong></div>
+        <div class="col-md-2">{{customerInfo.POSSYSTEM}}</div>
+        <div class="col-md-2"><strong>Pharmacy System:</strong></div>
+        <div class="col-md-2">{{customerInfo.PHARMASYSTEM}}</div>
+        <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-7"><h4>Portal Orders</h4></div>
+        <div class="col-md-5"><h4>CSOS Orders</h4></div>
+    </div>
+    <div class="row">
+        <div class="col-md-7 pull-left">
+            <table class=" table ds-responsive">
+                <thead>
+                    <tr>
+                        <th>Portal ID</th>
+                        <th>PO Number</th>
+                        <th>Status</th>
+                        <th>Blank</th>
+                        <th>Conf #</th>
+                        <th>Conf Date</th>
+                        <th>Creation Date</th>
+                        <th>Creation Time</th>
+                    </tr>
+                </thead>
+                <tbody ng-repeat="row in portalOrder">
+                    <tr>
+                        <td>{{row.WAORDID}}</td>
+                        <td>{{row.WAPONBR}}</td>
+                        <td>{{row.WASTATUS}}</td>
+                        <td>{{row.WABLNK}}</td>
+                        <td>{{row.WACNFN}}</td>
+                        <td>{{row.WACNDT}}</td>
+                        <td>{{row.WACCTD}}</td>
+                        <td>{{row.WACCTT}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-5 pull-left">
+            <table class="table ds-responsive">
+                <thead>
+                    <tr>
+                        <th><strong>Portal CSOS ID</strong></th>
+                        <th><strong>PO Number</strong></th>
+                        <th><strong>Status</strong></th>
+                        <th><strong>Blank</strong></th>
+                        <th><strong>Creation Date</strong></th>
+                        <th><strong>Creation Time</strong></th>
+                    </tr>
+                </thead>
+                <tbody ng-repeat="row in csosOrder">
+                    <tr>
+                        <td>{{row.WAORDID}}</td>
+                        <td>{{row.WAPONBR}}</td>
+                        <td>{{row.WASTATUS}}</td>
+                        <td>{{row.WABLNK}}</td>
+                        <td>{{row.WACCTD}}</td>
+                        <td>{{row.WACCTT}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--<div class="row">
+        <div class="col-md-6"  ng-repeat="row in portalOrder">
+            <div class="col-md-1"><strong>{{row.WAORDID}}</strong></div>
+            <div class="col-md-1"><strong>{{row.WAPONBR}}</strong></div>
+            <div class="col-md-1"><strong>{{row.WASTATUS}}</strong></div>
+            <div class="col-md-1"><strong>{{row.WABLNK}}</strong></div>
+            <div class="col-md-1"><strong>{{row.WACNFN}}</strong></div>
+            <div class="col-md-1"><strong>{{row.WACNDT}}</strong></div>
+            <div class="col-md-1"><strong>{{row.WACCTD}}</strong></div>
+            <div class="col-md-1"><strong>{{row.WACCTT}}</strong></div>
+        </div>
+        <div class="col-md-6">
+            <div class="col-md-1"><strong></strong></div>
+            <div class="col-md-1"><strong></strong></div>
+            <div class="col-md-1"><strong></strong></div>
+            <div class="col-md-1"><strong></strong></div>
+            <div class="col-md-1"><strong></strong></div>
+            <div class="col-md-1"><strong></strong></div>
+        </div>
+    </div> -->
+
+
+
+
+</div>
