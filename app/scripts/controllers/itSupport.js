@@ -2,6 +2,8 @@ angular.module('helpDesk').controller('itSupportCtrl', function ($state, $rootSc
 
     var customerId;
     $scope.customerInfo = [];
+    $scope.portalOrder = [];
+    $scope.csosOrder = [];
 
     // FUNCTIONS //
     //////////////
@@ -21,9 +23,25 @@ angular.module('helpDesk').controller('itSupportCtrl', function ($state, $rootSc
            //console.log("response ", response);
            if (angular.isDefined(response.data)){
                 //console.log("in isdefined");
-                $scope.customerInfo = [response];
+                $scope.customerInfo = response.data.Row;
+                //console.log('customer info', $scope.customerInfo);
            }
         });
+        CustomerService.getPortalOrderHeaderByCustomer(customerId).then(function(response){
+           //console.log("response", response);
+           if (angular.isDefined(response.data)){
+               $scope.portalOrder = response.data.RowSet.Row;
+               //console.log("portalOrder", response.data.RowSet.Row);
+           }
+        });
+        CustomerService.getCSOSOrderHeaderByCustomer(customerId).then(function(response){
+            //console.log("response", response);
+            if (angular.isDefined(response.data)){
+                $scope.csosOrder = response.data.RowSet.Row;
+                //console.log("csosOrder", response.data.RowSet.Row);
+            }
+        });
+
     }
 
 

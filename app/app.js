@@ -18,7 +18,7 @@ var hD = angular.module('helpDesk', ['ui.router',
                 params: {
                     obj: null
                 },
-                templateUrl: 'app/views/orderStats.html',
+                templateUrl: 'app/views/ordersReport.html',
                 controller: 'orderStatsCtrl'
             })
             .state('itSupport', {

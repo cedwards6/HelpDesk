@@ -1,0 +1,74 @@
+
+<h2>Customer Ordering Systems Report</h2>
+
+<h4>Today's Orders</h4>
+<h4>Portal - {{}}</h4>
+<h4>VAI - {{}}</h4>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="table-responsive ds-responsive ds-table-large">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date Range</th>
+                        <th>Axway</th>
+                        <th>Legisym</th>
+                        <th>Data Smith</th>
+                        <th>Portal</th>
+                        <th>EDI</th>
+                        <th>Order Desk</th>
+                        <th>Smith Select</th>
+                        <th>Total Orders</th>
+                        <th>Axway %</th>
+                        <th>Legisym %</th>
+                        <th>Data Smith %</th>
+                        <th>Portal %</th>
+                        <th>EDI %</th>
+                        <th>Order Desk %</th>
+                        <th>Smith Select %</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>YESTERDAY</td>
+                        <td>{{lastDayAxway}}</td>
+                        <td>{{lastDayLegisym}}</td>
+                        <td>{{lastDayDS}}</td>
+                        <td>{{lastDayPortal}}</td>
+                        <td>{{lastDayEDI}}</td>
+                        <td>{{lastDayOD}}</td>
+                        <td>{{lastDayIRx}}</td>
+                        <td>{{lastDayTotal}}</td>
+                        <td>{{lastDayAxwayPct | number : 2}}</td>
+                        <td>{{lastDayLegisymPct | number : 2}}</td>
+                        <td>{{lastDayDSPct | number : 2}}</td>
+                        <td>{{lastDayPortalPct | number : 2}}</td>
+                        <td>{{lastDayEDIPct | number : 2}}</td>
+                        <td>{{lastDayODPct | number : 2}}</td>
+                        <td>{{lastDayIRxPct | number : 2}}</td>
+                    </tr>
+                    <tr>
+                        <td>YESTERDAY</td>
+                        <td>{{mtdAxway}}</td>
+                        <td>{{mtdLegisym}}</td>
+                        <td>{{mtdDS}}</td>
+                        <td>{{mtdPortal}}</td>
+                        <td>{{mtdEDI}}</td>
+                        <td>{{mtdOD}}</td>
+                        <td>{{mtdIRx}}</td>
+                        <td>{{mtdTotal}}</td>
+                        <td>{{mtdAxwayPct | number : 2}}</td>
+                        <td>{{mtdLegisymPct | number : 2}}</td>
+                        <td>{{mtdDSPct | number : 2}}</td>
+                        <td>{{mtdPortalPct | number : 2}}</td>
+                        <td>{{mtdEDIPct | number : 2}}</td>
+                        <td>{{mtdODPct | number : 2}}</td>
+                        <td>{{mtdIRxPct | number : 2}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
