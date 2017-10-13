@@ -13,7 +13,7 @@ var hD = angular.module('helpDesk', ['ui.router',
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
         $stateProvider
-            .state('orderStats', {
+            .state('ordersReport', {
                 url:'/',
                 params: {
                     obj: null
