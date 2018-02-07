@@ -1,14 +1,18 @@
 <style>
-    h2.report-heading.ng-scope {
+    h2.report-heading2.ng-scope {
+        text-align: center;
+    }
+
+    h4.report-heading4.ng-scope {
         text-align: center;
     }
 
 </style>
-<h2 class="report-heading">Customer Ordering Systems Report</h2>
+<h2 class="report-heading2">Customer Ordering Systems Report</h2>
 
-<h4>Today's Orders</h4>
-<h4>Portal - {{currentPortal | number : 0}}</h4>
-<h4>VAI - {{currentVAI | number : 0}}</h4>
+<h4 class="report-heading4">Today's Orders</h4>
+<h4 class="report-heading4">Portal - {{currentPortal | number : 0}}</h4>
+<h4 class="report-heading4">VAI - {{currentVAI | number : 0}}</h4>
 <br>
 <div class="container-fluid">
     <div class="row">
@@ -17,27 +21,27 @@
                 <thead>
                     <tr>
                         <th>Date Range</th>
-                        <th>Axway</th>
+                        <th>PortalV4</th>
                         <th>Legisym</th>
                         <th>Data Smith</th>
                         <th>Portal</th>
                         <th>EDI</th>
                         <th>Order Desk</th>
-                        <th>Smith Select</th>
+                        <th>Integral RX</th>
                         <th>Total Orders</th>
-                        <th>Axway %</th>
+                        <th>PortalV4 %</th>
                         <th>Legisym %</th>
                         <th>Data Smith %</th>
                         <th>Portal %</th>
                         <th>EDI %</th>
                         <th>Order Desk %</th>
-                        <th>Smith Select %</th>
+                        <th>Integral RX %</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Yesterday</td>
-                        <td>{{lastDayAxway | number : 0}}</td>
+                        <td>{{lastDayPortalV4 | number : 0}}</td>
                         <td>{{lastDayLegisym | number : 0}}</td>
                         <td>{{lastDayDS | number : 0}}</td>
                         <td>{{lastDayPortal | number : 0}}</td>
@@ -45,7 +49,7 @@
                         <td>{{lastDayOD | number : 0}}</td>
                         <td>{{lastDayIRx | number : 0}}</td>
                         <td>{{lastDayTotal | number : 0}}</td>
-                        <td>{{lastDayAxwayPct | number : 2}}</td>
+                        <td>{{lastDayPortalV4Pct | number : 2}}</td>
                         <td>{{lastDayLegisymPct | number : 2}}</td>
                         <td>{{lastDayDSPct | number : 2}}</td>
                         <td>{{lastDayPortalPct | number : 2}}</td>
@@ -55,7 +59,7 @@
                     </tr>
                     <tr>
                         <td>{{currentMonth}}</td>
-                        <td>{{mtdAxway | number : 0}}</td>
+                        <td>{{mtdPortalV4 | number : 0}}</td>
                         <td>{{mtdLegisym | number : 0}}</td>
                         <td>{{mtdDS | number : 0}}</td>
                         <td>{{mtdPortal | number : 0}}</td>
@@ -63,7 +67,7 @@
                         <td>{{mtdOD | number : 0}}</td>
                         <td>{{mtdIRx | number : 0}}</td>
                         <td>{{mtdTotal | number : 0}}</td>
-                        <td>{{mtdAxwayPct | number : 2}}</td>
+                        <td>{{mtdPortalV4Pct | number : 2}}</td>
                         <td>{{mtdLegisymPct | number : 2}}</td>
                         <td>{{mtdDSPct | number : 2}}</td>
                         <td>{{mtdPortalPct | number : 2}}</td>
@@ -73,7 +77,7 @@
                     </tr>
                     <tr>
                         <td>{{prvMonth}}</td>
-                        <td>{{prvAxway | number : 0}}</td>
+                        <td>{{prvPortalV4 | number : 0}}</td>
                         <td>{{prvLegisym | number : 0}}</td>
                         <td>{{prvDS | number : 0}}</td>
                         <td>{{prvPortal | number : 0}}</td>
@@ -81,7 +85,7 @@
                         <td>{{prvOD | number : 0}}</td>
                         <td>{{prvIRx | number : 0}}</td>
                         <td>{{prvTotal | number : 0}}</td>
-                        <td>{{prvAxwayPct | number : 2}}</td>
+                        <td>{{prvPortalV4Pct | number : 2}}</td>
                         <td>{{prvLegisymPct | number : 2}}</td>
                         <td>{{prvDSPct | number : 2}}</td>
                         <td>{{prvPortalPct | number : 2}}</td>
@@ -91,7 +95,7 @@
                     </tr>
                     <tr>
                         <td>{{prv2Month}}</td>
-                        <td>{{prv2Axway | number : 0}}</td>
+                        <td>{{prv2PortalV4 | number : 0}}</td>
                         <td>{{prv2Legisym | number : 0}}</td>
                         <td>{{prv2DS | number : 0}}</td>
                         <td>{{prv2Portal | number : 0}}</td>
@@ -99,7 +103,7 @@
                         <td>{{prv2OD | number : 0}}</td>
                         <td>{{prv2IRx | number : 0}}</td>
                         <td>{{prv2Total | number : 0}}</td>
-                        <td>{{prv2AxwayPct | number : 2}}</td>
+                        <td>{{prv2PortalV4Pct | number : 2}}</td>
                         <td>{{prv2LegisymPct | number : 2}}</td>
                         <td>{{prv2DSPct | number : 2}}</td>
                         <td>{{prv2PortalPct | number : 2}}</td>
@@ -109,7 +113,7 @@
                     </tr>
                     <tr>
                         <td>{{prv3Month}}</td>
-                        <td>{{prv3Axway | number : 0}}</td>
+                        <td>{{prv3PortalV4 | number : 0}}</td>
                         <td>{{prv3Legisym | number : 0}}</td>
                         <td>{{prv3DS | number : 0}}</td>
                         <td>{{prv3Portal | number : 0}}</td>
@@ -117,7 +121,7 @@
                         <td>{{prv3OD | number : 0}}</td>
                         <td>{{prv3IRx | number : 0}}</td>
                         <td>{{prv3Total | number : 0}}</td>
-                        <td>{{prv3AxwayPct | number : 2}}</td>
+                        <td>{{prv3PortalV4Pct | number : 2}}</td>
                         <td>{{prv3LegisymPct | number : 2}}</td>
                         <td>{{prv3DSPct | number : 2}}</td>
                         <td>{{prv3PortalPct | number : 2}}</td>
@@ -127,7 +131,7 @@
                     </tr>
                     <tr>
                         <td>{{prv4Month}}</td>
-                        <td>{{prv4Axway | number : 0}}</td>
+                        <td>{{prv4PortalV4 | number : 0}}</td>
                         <td>{{prv4Legisym | number : 0}}</td>
                         <td>{{prv4DS | number : 0}}</td>
                         <td>{{prv4Portal | number : 0}}</td>
@@ -135,7 +139,7 @@
                         <td>{{prv4OD | number : 0}}</td>
                         <td>{{prv4IRx | number : 0}}</td>
                         <td>{{prv4Total | number : 0}}</td>
-                        <td>{{prv4AxwayPct | number : 2}}</td>
+                        <td>{{prv4PortalV4Pct | number : 2}}</td>
                         <td>{{prv4LegisymPct | number : 2}}</td>
                         <td>{{prv4DSPct | number : 2}}</td>
                         <td>{{prv4PortalPct | number : 2}}</td>

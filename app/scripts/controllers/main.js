@@ -12,19 +12,7 @@ angular.module('helpDesk').controller('MainCtrl', function ($state, $rootScope, 
 		{
 			name: 'Customer Info',
 			route: 'itSupport'
-		},
-		{
-			name: 'Customer Admin',
-			route: 'customerAdmin'
-		},
-		{
-			name: 'Orders Not Received',
-			route: 'onr'
-		},
-        {
-            name: 'Express 222 Setup',
-            route: 'express222Setup'
-        }
+		}
 	];
 
     // FUNCTIONS //
